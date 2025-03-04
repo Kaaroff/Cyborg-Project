@@ -13,7 +13,7 @@ class Category(models.Model):
 
     class Meta:
         verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
+        # verbose_name_plural = 'Категории'
 
 class Image(models.Model):
     file = models.ImageField(
@@ -23,7 +23,7 @@ class Image(models.Model):
 
     class Meta:
         verbose_name = 'Изображение продукта'
-        verbose_name_plural = 'Изображения продуктов'
+        # verbose_name_plural = 'Изображения продуктов'
 
     def __str__(self):
         return str(self.file)
@@ -35,11 +35,11 @@ class Product(models.Model):
     title = models.CharField(
         max_length=123,
         verbose_name='Название',
-        verbose_name_plural = 'Названия'
+        # verbose_name_plural = 'Названия'
     )
     category = models.ForeignKey(
         Category,
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
         verbose_name = 'Категория'
     )
     images = models.ManyToManyField(
@@ -64,7 +64,7 @@ class Product(models.Model):
 
     class Meta:
         verbose_name = 'Продукт'
-        verbose_name_plural = 'Продукты'
+        # verbose_name_plural = 'Продукты'
 
 # TODO: Connect to a user table
 class Rating(models.Model):
@@ -94,7 +94,7 @@ class Rating(models.Model):
 
     class Meta:
         verbose_name = 'Отзыв',
-        verbose_name_plural = 'Отзывы'
+        # verbose_name_plural = 'Отзывы'
 
 # TODO: Connect to a user table
 class RatingAnswer(models.Model):
@@ -123,6 +123,6 @@ class RatingAnswer(models.Model):
     )
     class Meta:
         verbose_name = 'Ответ на отзыв',
-        verbose_name_plural = 'Ответы на отзывы'
+        # verbose_name_plural = 'Ответы на отзывы'
 
-class Order(models.Model):
+# class Order(models.Model):
