@@ -42,6 +42,11 @@ class Product(models.Model):
         on_delete=models.PROTECT,
         verbose_name = 'Категория'
     )
+    main_image = models.ImageField(
+        upload_to='media/main_covers',
+        verbose_name='Главное фото',
+        help_text='Фото, которая будет отображаться на обложке объявления'
+    )
     images = models.ManyToManyField(
         Image,
         verbose_name='Изображения'
@@ -94,7 +99,7 @@ class Rating(models.Model):
 
     class Meta:
         verbose_name = 'Отзыв',
-        # verbose_name_plural = 'Отзывы'
+        verbose_name_plural = 'Отзывы'
 
 # TODO: Connect to a user table
 class RatingAnswer(models.Model):
@@ -123,6 +128,6 @@ class RatingAnswer(models.Model):
     )
     class Meta:
         verbose_name = 'Ответ на отзыв',
-        # verbose_name_plural = 'Ответы на отзывы'
+        verbose_name_plural = 'Ответы на отзывы'
 
 # class Order(models.Model):
