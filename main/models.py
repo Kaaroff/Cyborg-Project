@@ -29,7 +29,6 @@ class Image(models.Model):
         return str(self.file)
 
 
-# TODO: Connect to a user table
 class Product(models.Model):
     #user = ForeignKey()
     title = models.CharField(
@@ -71,7 +70,6 @@ class Product(models.Model):
         verbose_name = 'Продукт'
         # verbose_name_plural = 'Продукты'
 
-# TODO: Connect to a user table
 class Rating(models.Model):
     #user = ForeignKey()
     product = models.ForeignKey(
